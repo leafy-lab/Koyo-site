@@ -33,7 +33,7 @@ go build -o koyo-site
 ### 1. Initialize a new project
 
 ```bash
-koyo-site -init
+Koyo-site -init
 ```
 
 This creates:
@@ -148,7 +148,7 @@ This is my first blog post using **Koyo-site**!
 ### 5. Build your site
 
 ```bash
-koyo-site -build
+Koyo-site -build
 ```
 
 Output structure:
@@ -162,7 +162,7 @@ public/
 ### 6. Serve locally (coming soon)
 
 ```bash
-koyo-site -serve
+Koyo-site -serve
 ```
 
 ## Configuration
@@ -252,9 +252,9 @@ your-project/
 ## Commands
 
 ```bash
-koyo-site -init     # Initialize new project
-koyo-site -build    # Build static site
-koyo-site -serve    # Serve locally 
+Koyo-site -init     # Initialize new project
+Koyo-site -build    # Build static site
+Koyo-site -serve    # Serve locally 
 ```
 
 ## Dependencies
