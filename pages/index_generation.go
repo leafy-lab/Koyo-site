@@ -25,8 +25,9 @@ type PostMeta struct {
 
 // IndexPage is the index page with posts listing
 type IndexPage struct {
-	SiteTitle   string
-	SiteAuthor  string
+	SiteTitle     string
+	SiteAuthor    string
+	SiteAuthorBio string
 	Content     template.HTML
 	Posts       []PostMeta
 }
@@ -100,7 +101,7 @@ func CollectPosts(contentDir string) ([]PostMeta, error) {
 	return posts, nil
 }
 
-func GenerateIndexPage(contentDir, templatePath, outputPath, siteTitle, siteAuthor string) error {
+func GenerateIndexPage(contentDir, templatePath, outputPath, siteTitle, siteAuthor , siteAuthorBio string) error {
 	// Read _index.md
 	indexPath := filepath.Join(contentDir, "_index.md")
 	indexContent, err := os.ReadFile(indexPath)
@@ -120,6 +121,7 @@ func GenerateIndexPage(contentDir, templatePath, outputPath, siteTitle, siteAuth
 	indexPage := &IndexPage{
 		SiteTitle:  siteTitle,
 		SiteAuthor: siteAuthor,
+		SiteAuthorBio: siteAuthorBio,
 		Content:    template.HTML(htmlBody),
 		Posts:      posts,
 	}
@@ -131,6 +133,9 @@ func GenerateIndexPage(contentDir, templatePath, outputPath, siteTitle, siteAuth
 		}
 		if author, ok := frontmatter["author"].(string); ok {
 			indexPage.SiteAuthor = author
+		}
+		if authorbio, ok := frontmatter["bio"].(string); ok {
+			indexPage.SiteAuthorBio = authorbio
 		}
 	}
 
