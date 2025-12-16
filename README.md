@@ -173,6 +173,7 @@ Edit `koyo.config.yaml`:
 site:
   title: "My Koyo Site"
   author: "Your Name"
+  bio: "Your Bio"
 
 paths:
   content: "content"
@@ -186,6 +187,7 @@ paths:
 
 - `{{.SiteTitle}}` - Site title from config
 - `{{.SiteAuthor}}` - Site author from config
+- `{{.SiteAuthorBio}}` - Site author Bio from config
 - `{{.Content}}` - HTML content from `_index.md`
 - `{{.Posts}}` - Array of all posts
 
