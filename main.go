@@ -13,9 +13,9 @@ import (
 )
 
 var (
-	initFlag  	= flag.Bool("init", false, "Initialize a new koyo-site project")
-	buildFlag 	= flag.Bool("build", false, "Build the static site")
-	serveFlag 	= flag.Bool("serve", false, "Serve the site locally")
+	initFlag  = flag.Bool("init", false, "Initialize a new koyo-site project")
+	buildFlag = flag.Bool("build", false, "Build the static site")
+	serveFlag = flag.Bool("serve", false, "Serve the site locally")
 	addFile 	= flag.String("add", "", "Add a file")
 )
 
@@ -155,6 +155,7 @@ func buildSite() {
 			indexOutputPath,
 			cfg.Site.Title,
 			cfg.Site.Author,
+			cfg.Site.Bio,
 		); err != nil {
 			fmt.Printf("❌ Failed to generate index: %v\n", err)
 		}
