@@ -20,6 +20,7 @@ var (
 )
 
 func main(){
+	// Parsing the flag for cli commands
 	flag.Parse()
 
 	switch {
@@ -53,11 +54,13 @@ func initProject() {
 		fmt.Printf("✔ Created %s/\n", dir)
 	}
 
+	// Config file name 
 	configFile := "koyo.config.yaml"
 
 	configContent := `site:
   title: "My Koyo Site"
   author: "Your Name"
+	bio: "Your Bio"
 
 paths:
   content: "content"
