@@ -1,7 +1,8 @@
 package config
+
 import (
-	"os"
 	"gopkg.in/yaml.v3"
+	"os"
 )
 
 type Config struct {
@@ -16,6 +17,10 @@ type Config struct {
 		Templates string `yaml:"templates"`
 		Output    string `yaml:"output"`
 	} `yaml:"paths"`
+
+	Server struct {
+		Port string `yaml:"port"`
+	} `yaml:"server"`
 }
 
 func LoadConf() (*Config, error) {
